@@ -15,8 +15,15 @@ app.use(async (ctx, next) => {
 
 const router = new Router();
 
-async function sendJoinRequest(username: string) {
-  await console.log(username)
+function sendJoinRequest(username: string) {
+  console.log(username)
+  return new Promise((resolve, reject) => {
+    if (username.length <= 0) {
+      reject(null)
+    }
+    
+    resolve(null)
+  })
 }
 
 router.get("/join/:username", async(ctx, next) => {
